@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit
+        bootstrap="vendor/autoload.php"
+        backupGlobals="false"
+        backupStaticAttributes="false"
+        colors="true"
+        verbose="true"
+        convertErrorsToExceptions="true"
+        convertNoticesToExceptions="true"
+        convertWarningsToExceptions="true"
+        processIsolation="false"
+        stopOnFailure="true"
+>
+    <coverage>
+        <include>
+            <directory suffix=".php">src/</directory>
+        </include>
+    </coverage>
+    <testsuites>
+        <testsuite name="Unit">
+            <directory suffix="Test.php">./tests/Unit</directory>
+        </testsuite>
+    </testsuites>
+    <php>
+        <env name="APP_ENV" value="testing"/>
+        <env name="DB_CONNECTION" value="sqlite"/>
+        <env name="DB_DATABASE" value=":memory:"/>
+        <env name="APP_KEY" value="base64:y2G0K9D+TfPZxYDLpcnwQ+cdF8imJi2gtTZRs62wQoI="/>
+        <env name="REPORTS_MONGO_DB_CONNECTION_NAME" value="mongodb"/>
+        <env name="REPORTS_DEFAULT_DATA_OWNER" value='App\Models\Client'/>
+        <env name="MONGO_DB_HOST" value="localhost"/>
+        <env name="MONGO_DB_PORT" value="27017"/>
+        <env name="MONGO_DB_USERNAME" value="root"/>
+        <env name="MONGO_DB_PASSWORD" value="root"/>
+        <env name="MONGO_DB_AUTHENTICATION_DATABASE" value="admin"/>
+    </php>
+</phpunit>
